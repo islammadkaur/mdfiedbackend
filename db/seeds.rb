@@ -2,13 +2,8 @@ User.destroy_all
 Account.destroy_all
 
 
-user1 = User.create(first_name: "Dominik", last_name: "Szarkiel", date_of_birth: Date.new(1995, 11, 17), email: "dom@gmail.com", address: "123 Ave", city: "Streamwood", state:"IL", zipcode:"60107", password:"abc")
-user2 = User.create(first_name: "Dominik", last_name: "Szarkiel", date_of_birth: Date.new(1995, 11, 17), email: "dominik@gmail.com", address: "123 Ave", city: "Streamwood", state:"IL", zipcode:"60107", password:"abc")
+user1 = User.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam@gmail.com", address: "123 Ave", city: "Chicago", state:"IL", zipcode:"60615", password:"111111")
 
-account1 = Account.create(name: "Chase", balance: 6320.34, category: "Checking", user_id: user1.id)
-account2 = Account.create(name: "Student Loan", balance: 2549.84, category: "Loan", user_id: user1.id)
-
-account3 = Account.create(name: "Student Loan", balance: 2549.84, category: "Loan", user_id: user2.id)
 
 #---------------------------------------------------------------------------INSURANCE COMPANIES------------------------------------------------------------------------------------------------------------------------------------------------
 

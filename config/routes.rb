@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :insurances
   resources :specialties
   resources :doctors
-  resources :accounts
   resources :users
 
   namespace :api do

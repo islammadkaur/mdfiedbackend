@@ -145,9 +145,25 @@ doctorHospital3 = DoctorHospital.create(clinic_id: 2, doctor_id: 1)
 
 
 monday1 = Monday.create(available: true, start: 1, end: 2, doctor_id: 1)
-monday2 = Monday.create(start: 1, end: 2, doctor_id: 2)
+monday2 = Monday.create(start: 8, end: 17, doctor_id: 2)
 
 tuesday1 = Tuesday.create(available: true , start: 1, end: 2, doctor_id: 1)
+tuesday2 = Tuesday.create(available: true , start: 8, end: 17, doctor_id: 2)
+
+wednesday1 = Wednesday.create(available: true , start: 1, end: 2, doctor_id: 1)
+wednesday2 = Wednesday.create(available: true , start: 8, end: 17, doctor_id: 2)
+
+tuesday1 = Thursday.create(available: true , start: 1, end: 2, doctor_id: 1)
+tuesday2 = Thursday.create(available: true , start: 8, end: 17, doctor_id: 2)
+
+friday1 = Friday.create(available: true , start: 1, end: 2, doctor_id: 1)
+friday2 = Friday.create(available: true , start: 8, end: 17, doctor_id: 2)
+
+saturday1 = Saturday.create(available: true , start: 1, end: 2, doctor_id: 1)
+saturday2 = Saturday.create(available: true , start: 8, end: 17, doctor_id: 2)
+
+sunday1 = Sunday.create(available: true , start: 1, end: 2, doctor_id: 1)
+sunday2 = Sunday.create(available: true , start: 8, end: 17, doctor_id: 2)
 
 Appointment.create(booked: true, date: DateTime.new(2021, 03, 22), start: DateTime.new(2021, 03, 22, 12), end: DateTime.new(2021, 03, 22, 13), doctor_id: 1, user_id: 1, appointment_doctor_user_id: 1)
 Appointment.create(booked: true, date: DateTime.new(2021, 03, 22), start: DateTime.new(2021, 03, 22, 12), end: DateTime.new(2021, 03, 22, 13), doctor_id: 1, user_id: 1, appointment_doctor_user_id: 2)

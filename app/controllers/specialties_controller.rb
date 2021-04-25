@@ -4,6 +4,11 @@ class SpecialtiesController < ApplicationController
         render json: specialties     
     end
 
+    def show
+      specialty = Specialty.find_by_id(params[:id])
+        render json: specialty.to_json
+    end
+    
     def create
         specialty = Specialty.new(
             name: params[:name]

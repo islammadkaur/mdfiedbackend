@@ -4,7 +4,7 @@ class NewDoctorEmailMailer < ApplicationMailer
         @name = doctor.first_name
 
         mail to: doctor.email, 
-            subject: "Welcome to Finate!"
+            subject: "Thank you for joining Mdfied!"
     end
 
 end

@@ -1,12 +1,13 @@
 class DoctorsController < ApplicationController
+
     def index 
         doctors = Doctor.all
-        render json: doctors, except: [:created_at, :updated_at]
+        render json: doctors 
     end
 
     def show
         doctor = Doctor.find_by_id(params[:id])
-        render json: doctor.to_json
+        render json: doctor
     end
 
     def create
@@ -15,7 +16,7 @@ class DoctorsController < ApplicationController
             NewDoctorEmailMailer.notify_doctor(doctor).deliver_later
             render json: doctor, except: [:created_at, :updated_at]
         else
-            render json: {error: doctor.errors.full_messages}
+            render json: { error: doctor.errors.full_messages }
         end
     end
 
@@ -24,7 +25,7 @@ class DoctorsController < ApplicationController
         if doctor.update(doctor_params)
             render json: doctor
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: { error: "Oops, something went wrong." }
         end
     end
 
@@ -33,13 +34,14 @@ class DoctorsController < ApplicationController
         if doctor.destroy
             render json: doctor
         else
-            render json: {error: "Oops, something went wrong."}
+            render json: { error: "Oops, something went wrong." }
         end
     end
 
-    private 
+    private
 
     def doctor_params
-        params.permit(:first_name, :last_name, :date_of_birth, :email, :password, :address, :gender, :timeslot, :specialty_id)
+        params.permit(:first_name, :last_name, :date_of_birth, :email, :password, :address, :gender, :specialty_id)
     end
+
 end

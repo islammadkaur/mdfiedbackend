@@ -1,12 +1,6 @@
 User.destroy_all
-Account.destroy_all
-
-
-user1 = User.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam@gmail.com", address: "123 Ave", city: "Chicago", state:"IL", zipcode:"60615", password:"111111")
-
-
-#---------------------------------------------------------------------------INSURANCE COMPANIES------------------------------------------------------------------------------------------------------------------------------------------------
-
+Clinic.destroy_all
+Doctor.destroy_all
 
 aarp = Insurance.create(name: "AARP")
 aetna = Insurance.create(name: "Aetna")
@@ -63,9 +57,7 @@ universal_American_Corporation = Insurance.create(name: "Universal American Corp
 us_Health_Group = Insurance.create(name: "US Health Group")
 vantage_Health_Plan = Insurance.create(name: "Vantage Health Plan")
 wellCare = Insurance.create(name: "WellCare")
-
-
-#---------------------------------------------------------------------------SPECIALTIES------------------------------------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------SPECIALTIES------------------------------------------------------------------------------------------------------------------------------------------------#
 
 allergy = Specialty.create(name: "Allergy and immunology")
 anesthesiology = Specialty.create(name: "Anesthesiology")
@@ -114,16 +106,58 @@ urgent_Care_Medicine = Specialty.create(name: "Urgent Care")
 urology = Specialty.create(name: "Urology")
 vascular_surgery = Specialty.create(name: "Vascular surgery")
 
+chicagoHospital = Clinic.create(name:"Mitchell Hospital - Hyde Park", email: 'islam@gmail.com', address: "5815 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: 60637, rating: 4, password: "111111")                                           
+chicagoHospital2 = Clinic.create(name:"Comer Children's Hospital", email: 'islam@gmail.com', address: "5721 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: 60637, rating: 4, password: "111111")
+chicagoHospital3 = Clinic.create(name:"The University of Chicago Medicine", email: 'islam@gmail.com', address: "5841 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: 60637, rating: 4, password: "111111")
+chicagoHospital4 = Clinic.create(name:"Advocate Good Samaritan Hospital", email: 'islam@gmail.com', address: "3815 Highland Ave" , state:"IL" , city: "Downers Grove" , zip: 60515, rating: 4, password: "111111")
+chicagoHospital5 = Clinic.create(name:"Northwestern Medicine Central DuPage Hospital", email: 'islam@gmail.com', address:"25 North Winfield Rd" , state:"IL" , city: "Winfield" , zip: 60190, rating: 4, password: "111111")
+chicagoHospital6 = Clinic.create(name:"Marianjoy Rehabilitation Hospital", email: 'islam@gmail.com', address:"26W171 W Roosevelt Rd" , state:"IL" , city: "Wheaton" , zip: 60187, rating: 4, password: "111111")
+chicagoHospital7 = Clinic.create(name:"Elmhurst Hospital - Main Campus", email: 'islam@gmail.com', address:"155 E Brush Hill Rd" , state:"IL" , city: "Elmhurst" , zip: 60126, rating: 4, password: "111111")
+chicagoHospital8 = Clinic.create(name:"Adventist GlenOaks Hospital", email: 'islam@gmail.com', address:"25 North Winfield Rd" , state:"IL" , city: "Winfield" , zip: 60190, rating: 4, password: "111111")
+chicagoHospital9 = Clinic.create(name:"Northwestern Medicine Immediate Care Bloomingdale", email: 'islam@gmail.com' , address:"235 S Gary Ave" , state:"IL" , city: "Bloomingdale" , zip: 60198, rating: 4, password: "111111")
+chicagoHospital10 = Clinic.create(name:"Amital Health Adventist Medical Center Hinsdale", email: 'islamm@gmail.com', address:"120 N Oak St" , state:"IL" , city: "Hinsdale" , zip: 60521, rating: 4, password: "111111")
+chicagoHospital11 = Clinic.create(name:"Amitall Health Adventist Medical Center Hinsdale", email: 'islammm@gmail.com', address:"120 N Oak St" , state:"IL" , city: "Hinsdale" , zip: 60521, rating: 4, password: "111111")
+chicagoHospital12 = Clinic.create(name:"Amita;; Health Adventist Medical Center Hinsdale", email: 'islammmmm@gmail.com', address:"120 N Oak St" , state:"IL" , city: "Hinsdale" , zip: 60521, rating: 4, password: "111111")
+chicagoHospital13 = Clinic.create(name:"Amitkkkk Health Adventist Medical Center Hinsdale", email: 'islammmmmm@gmail.com', address:"120 N Oak St" , state:"IL" , city: "Hinsdale" , zip: 60521, rating: 4, password: "111111")
+
+clinicCreate = ClinicsInsurance.create(insurance_id: 1, clinic_id: 1)
+clinicCreate = ClinicsInsurance.create(insurance_id: 2, clinic_id: 1)
+clinicCreate = ClinicsInsurance.create(insurance_id: 1, clinic_id: 2)
+clinicCreate = ClinicsInsurance.create(insurance_id: 2, clinic_id: 2)
+
+user1 = User.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam@gmail.com", address: "123 Ave", city: "Chicago", state:"IL", zipcode:"60615", password:"111111")
+doctor1 = Doctor.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam2@gmail.com", address: "123 Ave", password:"111111", gender: 'Male', specialty_id: 1)
+doctor1 = Doctor.create(first_name: "Doctor", last_name: "Pepper", date_of_birth: Date.new(1996, 01, 06), email: "doc@gmail.com", address: "123 Ave", password:"111111", gender: 'Male', specialty_id: 2)
+
+
+message1 = Message.create(message: 'Hello Doctor')
+message1 = Message.create(message: 'Testing More Messages')
+
+userDoctorMessage = UserDoctorMessage.create(user_id: 1, doctor_id: 1, message_id: 1)
+userDoctorMessage2 = UserDoctorMessage.create(user_id: 1, doctor_id: 1, message_id: 2)
+
+doctorSpecialty = DoctorSpecialty.create(specialty_id: 1, doctor_id: 1)
+
+doctorHospital = DoctorHospital.create(clinic_id: 1, doctor_id: 1)
+doctorHospital2 = DoctorHospital.create(clinic_id: 1, doctor_id: 2)
+doctorHospital3 = DoctorHospital.create(clinic_id: 2, doctor_id: 1)
 
 
 
-chicagoHospital = Clinic.create(name:"Mitchell Hospital - Hyde Park", address: "5815 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: "60637")                                           
-chicagoHospital2 = Clinic.create(name:"Comer Children's Hospital", address: "5721 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: "60637")
-chicagoHospital3 = Clinic.create(name:"The University of Chicago Medicine", address: "5841 S Maryland Ave" , state:"IL" , city: "Chicago" , zip: "60637")
-chicagoHospital4 = Clinic.create(name:"Advocate Good Samaritan Hospital", address: "3815 Highland Ave" , state:"IL" , city: "Downers Grove" , zip: "60515")
-chicagoHospital5 = Clinic.create(name:"Northwestern Medicine Central DuPage Hospital", address:"25 North Winfield Rd" , state:"IL" , city: "Winfield" , zip: "60190")
-chicagoHospital6 = Clinic.create(name:"Marianjoy Rehabilitation Hospital", address:"26W171 W Roosevelt Rd" , state:"IL" , city: "Wheaton" , zip: "60187")
-chicagoHospital7 = Clinic.create(name:"Elmhurst Hospital - Main Campus", address:"155 E Brush Hill Rd" , state:"IL" , city: "Elmhurst" , zip: "60126")
-chicagoHospital8 = Clinic.create(name:"Adventist GlenOaks Hospital", address:"25 North Winfield Rd" , state:"IL" , city: "Winfield" , zip: "60190")
-chicagoHospital9 = Clinic.create(name:"Northwestern Medicine Immediate Care Bloomingdale" , address:"235 S Gary Ave" , state:"IL" , city: "Bloomingdale" , zip: "60198")
-chicagoHospital10 = Clinic.create(name:"Amita Health Adventist Medical Center Hinsdale" , address:"120 N Oak St" , state:"IL" , city: "Hinsdale" , zip: "60521")
+monday1 = Monday.create(available: true, start: 1, end: 2, doctor_id: 1)
+monday2 = Monday.create(start: 1, end: 2, doctor_id: 2)
+
+tuesday1 = Tuesday.create(available: true , start: 1, end: 2, doctor_id: 1)
+
+Appointment.create(booked: true, date: DateTime.new(2021, 03, 22), start: DateTime.new(2021, 03, 22, 12), end: DateTime.new(2021, 03, 22, 13), doctor_id: 1, user_id: 1, appointment_doctor_user_id: 1)
+Appointment.create(booked: true, date: DateTime.new(2021, 03, 22), start: DateTime.new(2021, 03, 22, 12), end: DateTime.new(2021, 03, 22, 13), doctor_id: 1, user_id: 1, appointment_doctor_user_id: 2)
+
+AppointmentDoctorUser.create(user_id: 1, doctor_id: 1, appointment_id: 1, monday_id: 1)
+AppointmentDoctorUser.create(user_id: 1, doctor_id: 1, appointment_id: 2, tuesday_id: 1)
+
+
+
+
+
+
+

@@ -4,7 +4,7 @@ class NewUserEmailMailer < ApplicationMailer
         @name = user.first_name
 
         mail to: user.email, 
-            subject: "Welcome to Finate!"
+            subject: "Thank you for joining Mdfied!"
     end
 
 end

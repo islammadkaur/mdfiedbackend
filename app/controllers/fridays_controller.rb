@@ -1,0 +1,2 @@
+class FridaysController < ApplicationController
+end

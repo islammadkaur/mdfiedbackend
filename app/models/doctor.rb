@@ -28,7 +28,7 @@ class Doctor < ApplicationRecord
     validates :last_name, presence: true
     validates :password, presence: true, length: {minimum: 6}
     validates :date_of_birth, presence: true
-    validates :gender, presence: true
+    validates :gender, inclusion: { in: %w(Male Female), presence: true}
     validates :specialty_id, presence: true
     validates :email, uniqueness: true
 

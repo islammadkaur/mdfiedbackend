@@ -127,7 +127,8 @@ clinicCreate = ClinicsInsurance.create(insurance_id: 2, clinic_id: 2)
 
 user1 = User.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam@gmail.com", address: "123 Ave", city: "Chicago", state:"IL", zipcode:"60615", password:"111111")
 doctor1 = Doctor.create(first_name: "Islam", last_name: "Madkaur", date_of_birth: Date.new(1996, 01, 06), email: "islam2@gmail.com", address: "123 Ave", password:"111111", gender: 'Male', specialty_id: 1)
-doctor1 = Doctor.create(first_name: "Doctor", last_name: "Pepper", date_of_birth: Date.new(1996, 01, 06), email: "doc@gmail.com", address: "123 Ave", password:"111111", gender: 'Male', specialty_id: 2)
+doctor2 = Doctor.create(first_name: "Doctor", last_name: "Pepper", date_of_birth: Date.new(1996, 01, 06), email: "doc@gmail.com", address: "123 Ave", password:"111111", gender: 'Male', specialty_id: 2)
+doctor3 = Doctor.create(first_name: "Pink", last_name: "Bubbles", date_of_birth: Date.new(1996, 01, 06), email: "pinky@gmail.com", address: "123 Ave", password:"111111", gender: 'Female', specialty_id: 5)
 
 
 message1 = Message.create(message: 'Hello Doctor')

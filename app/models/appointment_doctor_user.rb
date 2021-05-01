@@ -11,36 +11,8 @@ class AppointmentDoctorUser < ApplicationRecord
     belongs_to :saturday, optional: true
     belongs_to :sunday, optional: true
 
-    # has_many :appointment_doctor_users
     has_many :users
 
-    # def monday
-        
-    # end
-
-    # def tuesday
-
-    # end
-
-    # def wednesday
-
-    # end
-
-    # def thursday
-
-    # end
-
-    # def friday
-
-    # end
-
-    # def saturday
-
-    # end
-
-    # def sunday
-
-    # end
 
 end
 

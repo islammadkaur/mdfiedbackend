@@ -2,7 +2,6 @@ class DoctorSerializer < ActiveModel::Serializer
   attributes :id, :first_name, :last_name, :date_of_birth, :email, :address, :gender, :image
 
   has_many :doctor_specialties
-  # has_many :specialties, through: :doctor_specialties
 
   has_many :mondays
   has_many :tuesdays
@@ -14,10 +13,7 @@ class DoctorSerializer < ActiveModel::Serializer
 
   has_many :specialties
 
-  # has_many :appointment_doctor_users
-  # has_many :users, through: :appointment_doctor_users
-  # has_many :appointments, through: :appointment_doctor_users
-  # has_many :doctors, through: :appointment_doctor_users
+
 
   has_many :user_doctor_messages
   has_many :users, through: :user_doctor_messages

@@ -1,22 +1,7 @@
 Rails.application.routes.draw do
-  resources :sundays
-  resources :saturdays
-  resources :fridays
-  resources :thursdays
-  resources :wednesdays
-  resources :tuesdays
-  resources :mondays
-  resources :doctor_specialties
-  resources :user_doctor_messages
+  resources :categories
+  resources :checklists
   resources :messages
-  resources :doctor_hospitals
-  resources :appointment_doctor_users
-  resources :clinics_insurances
-  resources :appointments
-  resources :clinics
-  resources :insurances
-  resources :specialties
-  resources :doctors
   resources :users
 
   namespace :api do

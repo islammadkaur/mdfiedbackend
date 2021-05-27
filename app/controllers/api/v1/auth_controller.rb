@@ -21,7 +21,6 @@ class Api::V1::AuthController < ApplicationController
         user_id = decoded_token[0]["user_id"]
 
          user = User.find(user_id)
-        #  doctor = Doctor.find(doctor_id)
 
          if user 
             render json: {user: UserSerializer.new(user)}

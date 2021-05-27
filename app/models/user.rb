@@ -1,18 +1,19 @@
 class User < ApplicationRecord
     has_secure_password
-    belongs_to :clinic, optional: true
-    has_many :appointment_doctor_users
-    has_many :appointments, through: :appointment_doctor_users
-    has_many :doctors, through: :appointment_doctor_users
+    has_many :categories
+    has_many :checklists, through: :categories
 
-    has_many :user_doctor_messages
-    has_many :doctors, through: :user_doctor_messages
-    has_many :messages, through: :user_doctor_messages
+    PASSWORD_FORMAT = /\A
+  (?=.{8,})          # Must contain 8 or more characters
+  (?=.*\d)           # Must contain a digit
+  (?=.*[a-z])        # Must contain a lower case character
+  (?=.*[A-Z])        # Must contain an upper case character
+  (?=.*[[:^alnum:]]) # Must contain a symbol
+/x
+
 
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :password, presence: true, length: {minimum: 6}
-    validates :date_of_birth, presence: true
+    validates :password, presence: true, format: { with: PASSWORD_FORMAT}
     validates :email, uniqueness: true
-    validates :zipcode, presence: true, length: {is: 5}
 end
